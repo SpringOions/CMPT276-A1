@@ -1,8 +1,8 @@
-FROM maven:3.9-eclipse-temurin-21 AS build
+FROM maven:3.8.4-openjdk-17 AS build
 COPY . .
 RUN mvn clean package -DskipTests
 
-FROM eclipse-temurin:21-jdk
-COPY --from=build /target/demo-0.01-SNAPSHOT.jar demo.jar
+FROM eclipse-temurin:21
+COPY --from=build /target/asn1-0.01-SNAPSHOT.jar /opt/app/calculator.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+ENTRYPOINT ["java","-jar","/opt/app/calculator.jar"]
