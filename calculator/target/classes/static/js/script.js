@@ -34,6 +34,9 @@ add_button.addEventListener('click', function(evt){
 
     td3.appendChild(new_input)
 
+    const newp = document.createElement("p")
+    newp.id = "A" + assignment_num +"-percent"
+
     document.getElementById("gradeTable").appendChild(new_Row)
 })
 
@@ -42,6 +45,14 @@ mean_button.addEventListener("click", mean)
 
 var weight_button = document.querySelector('button[id="weight"]')
 weight_button.addEventListener("click", weighted)
+
+function percent(int,percent){
+    var paragraph = "A" + int + "-percent"
+    var per = document.getElementById(paragraph)
+
+    per.textContent = percent + "%"
+
+}
 
 function mean(){
     
@@ -52,8 +63,11 @@ function mean(){
         for(var i=1;i<=assignment_num;i++){
             var n = "A" + String(i) + "-numerator"
             var d = "A" + String(i) + "-denominator"
-            
-            meanGrade += ((document.getElementById(n)?.value)/(document.getElementById(d)?.value));
+
+            var percent = ((document.getElementById(n)?.value)/(document.getElementById(d)?.value))
+            percent(i,percent)
+
+            meanGrade += percent
         }
         meanGrade = meanGrade/assignment_num
 
@@ -73,8 +87,12 @@ function weighted(){
             var n = "A" + String(i) + "-numerator"
             var d = "A" + String(i) + "-denominator"
 
+            var fraction = (document.getElementById(n)?.value)/(document.getElementById(d)?.value)
+
+            percent(i,fraction)
+
             var cur_weight = document.getElementById(weight_id)?.value
-            weightedGrade += ((document.getElementById(n)?.value)/(document.getElementById(d)?.value))*cur_weight
+            weightedGrade += (fraction)*cur_weight
             total_weight += Number(cur_weight)
         }
 
