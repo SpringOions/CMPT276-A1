@@ -37,6 +37,8 @@ add_button.addEventListener('click', function(evt){
     const newp = document.createElement("p")
     newp.id = "A" + assignment_num +"-percent"
 
+    td5.appendChild(newp)
+
     document.getElementById("gradeTable").appendChild(new_Row)
 })
 
@@ -46,11 +48,12 @@ mean_button.addEventListener("click", mean)
 var weight_button = document.querySelector('button[id="weight"]')
 weight_button.addEventListener("click", weighted)
 
-function percent(int,percent){
-    var paragraph = "A" + int + "-percent"
-    var per = document.getElementById(paragraph)
+function percentCalc(num,percent){
 
-    per.textContent = percent + "%"
+    var paragraph = "A" + num + "-percent"
+    var per = document?.getElementById(paragraph)
+
+    per.innerText = percent*100 + "%"
 
 }
 
@@ -65,7 +68,7 @@ function mean(){
             var d = "A" + String(i) + "-denominator"
 
             var percent = ((document.getElementById(n)?.value)/(document.getElementById(d)?.value))
-            percent(i,percent)
+            percentCalc(i,percent)
 
             meanGrade += percent
         }
@@ -89,7 +92,7 @@ function weighted(){
 
             var fraction = (document.getElementById(n)?.value)/(document.getElementById(d)?.value)
 
-            percent(i,fraction)
+            percentCalc(i,fraction)
 
             var cur_weight = document.getElementById(weight_id)?.value
             weightedGrade += (fraction)*cur_weight
