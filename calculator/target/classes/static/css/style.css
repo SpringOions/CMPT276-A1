@@ -1,0 +1,90 @@
+
+h2{
+    color: #A6192D;
+}
+
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #A6192D;
+    margin: 0px;
+}
+
+#calc-section{
+    background-color: #E9EFF1;
+    padding:10px;
+    width:60%;
+    overflow-x: auto;
+}
+
+#main-section{
+    border-top: 20px solid #3D3935;
+    border-bottom: 40px solid #3D3935;
+    background-color: white;
+    width:auto;
+    margin: 0px 40px;
+    padding: 25px;
+}
+
+input{
+    width:45px;
+    height:30px;
+}
+
+table, tr, td, th{
+    border: 1px solid grey;
+    text-align:left;
+
+}
+
+#tablehead{
+    margin-left:auto;
+    padding-left:5px;
+    font-weight:bold;
+    text-align: left;
+    background-color: #DDDDDD;
+}
+
+
+td{
+    padding:5px 70px 5px 15px;
+
+}
+
+table{
+    border-collapse: collapse;
+    width:auto;
+    margin-bottom:25px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-variant-numeric: oldstyle-nums;
+}
+
+.red-buttons{
+    color:white;
+    background-color: #A6192D;
+    border-radius: 4px;
+    width:90px;
+    height: 30px;
+    border: none;
+    margin: 5px;
+}
+
+.red-buttons:hover{
+    background-color: #7d1222;
+}
+
+#buttons-pos{
+    margin-left:75%;
+}
+
+p{
+    margin: 25px 0px;
+}
+
+@media only screen and (max-width: 900px){
+    #calc-section{
+        width:auto;
+    }
+}
