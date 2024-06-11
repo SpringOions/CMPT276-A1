@@ -1,1 +1,2 @@
-please go to hello.html because I accidentally named it that instead of calculator.html
+website is hosted here: https://cmpt276-a1-calculator.onrender.com/hello.html
+
